@@ -1,6 +1,6 @@
 const sendEmail = require("../misc/mailer");
-const verifyUserEmail = async(req, username, email, secretToken) => {
-    const html = `
+const verifyUserEmail = async (req, username, email, secretToken) => {
+  const html = `
   Hello ${username},
   <br />
   <br />
@@ -22,11 +22,11 @@ const verifyUserEmail = async(req, username, email, secretToken) => {
   <br />
   <strong>Team WAAW SOCIAL</strong>
 `;
-    await sendEmail(
-        "chidiebereuzomahumble@gmail.com",
-        email,
-        "Please Verify Your Email",
-        html
-    );
+  await sendEmail(
+    "ejoor0000@gmail.com",
+    email,
+    "Please Verify Your Email",
+    html
+  );
 };
 module.exports = verifyUserEmail;

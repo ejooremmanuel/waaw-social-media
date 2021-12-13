@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const dotenv = require("dotenv").config();
 module.exports = () => {
   mongoose
-    .connect("mongodb://localhost/waaw-social-media")
+    .connect(process.env.db)
     .then(() => console.log("Database connected"))
     .catch((error) => console.error("Database not connected", error.message));
-}
+};
