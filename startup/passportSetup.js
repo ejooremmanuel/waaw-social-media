@@ -16,15 +16,15 @@ module.exports = () => {
                 false,
                 req.flash("error-message", "Incorrect email or password")
               );
-            if (user.verified !== true)
-              return done(
-                null,
-                false,
-                req.flash(
-                  "error-message",
-                  "Sorry you have not verified your account, please check your email for the verification link."
-                )
-              );
+            // if (user.verified !== true)
+            //   return done(
+            //     null,
+            //     false,
+            //     req.flash(
+            //       "error-message",
+            //       "Sorry you have not verified your account, please check your email for the verification link."
+            //     )
+            //   );
             const passwordMatch = await bcrypt.compare(password, user.password);
             if (!passwordMatch)
               return done(

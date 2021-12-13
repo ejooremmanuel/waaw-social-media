@@ -49,7 +49,7 @@ module.exports = {
       userImage: url,
       initials: avatar,
     });
-    await verifyEmail(req, username, email, secretToken);
+    // await verifyEmail(req, username, email, secretToken);
 
     await user.save();
     if (!user) {
