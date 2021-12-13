@@ -60,7 +60,7 @@ module.exports = {
       "success-message",
       "Registration successful, a verification token has been sent to your email."
     );
-    return res.redirect("/auth/verify-account");
+    return res.redirect("/auth/login");
   },
   resetPassword: async (req, res) => {
     const { userId } = req.params;
