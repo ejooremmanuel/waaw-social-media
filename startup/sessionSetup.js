@@ -1,6 +1,6 @@
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-
+const dotenv = require("dotenv").config();
 module.exports = (app) => {
   app.use(
     session({
@@ -9,9 +9,9 @@ module.exports = (app) => {
       saveUninitialized: true,
       cookie: { maxAge: Date.now() + 3600 * 24 * 60 * 60 },
       store: MongoStore.create({
-        mongoUrl: "mongodb://localhost/waaw-social-media",
+        mongoUrl: process.env.db,
         ttl: 3600 * 24 * 60 * 60,
       }),
     })
   );
-}
+};
